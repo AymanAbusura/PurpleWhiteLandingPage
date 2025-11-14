@@ -55,12 +55,20 @@ window.onload = function() {;
     // Scroll
     var buttons = document.querySelectorAll(".scroll_btn");
     var form = document.getElementById("form");
+
     if (buttons.length > 0) {
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener("click", function() {
-                form.scrollIntoView({
+
+                // Get the element's Y position on the page
+                var formY = form.getBoundingClientRect().top + window.pageYOffset;
+
+                // Scroll to that position minus 200px
+                window.scrollTo({
+                    top: formY - 200,
                     behavior: "smooth"
                 });
+
             });
         }
     }
