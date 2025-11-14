@@ -60,10 +60,8 @@ window.onload = function() {;
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener("click", function() {
 
-                // Get the element's Y position on the page
                 var formY = form.getBoundingClientRect().top + window.pageYOffset;
 
-                // Scroll to that position minus 200px
                 window.scrollTo({
                     top: formY - 200,
                     behavior: "smooth"
